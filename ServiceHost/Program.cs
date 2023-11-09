@@ -1,5 +1,6 @@
 using _01_framework.Application;
 using ChatRoomManagement.Infrastructure.Configuration;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using WebApiTest;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,14 @@ builder.Services.AddTransient<IAuthHelper, AuthHelper>();
 builder.Services.AddTransient<ISecurity,Security>();
 
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, o =>
+    {
+        o.LoginPath = new PathString("/auth/login");
+        o.LogoutPath = new PathString("/auth/logout");
+        o.AccessDeniedPath = new PathString("/AccessDenied");
+    });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -31,6 +40,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();

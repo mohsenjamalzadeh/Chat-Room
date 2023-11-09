@@ -15,8 +15,8 @@ namespace ChatRoomManagement.Infrastructure.EfCore.Mapping
             builder.Property(p=>p.Name).HasMaxLength(50).IsRequired();
             builder.Property(p=>p.UserName).HasMaxLength(50).IsRequired();
             builder.Property(p=>p.Email).HasMaxLength(150).IsRequired();
-            builder.Property(p=>p.Password).HasMaxLength(20).IsRequired();
-            builder.Property(p=>p.Picture).HasMaxLength(150).IsRequired();
+            builder.Property(p=>p.Password).HasMaxLength(300).IsRequired();
+            builder.Property(p=>p.Picture).HasMaxLength(500).IsRequired();
 
 
         }

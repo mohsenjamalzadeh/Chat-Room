@@ -11,7 +11,10 @@ namespace ChatRoomManagement.Infrastructure.EfCore.Repository
             _context=context;
         }
 
+		public User GetByEmail(string email)
+		{
+			return _context.Users.FirstOrDefault(p=>p.Email==email);
 
-
-    }
+		}
+	}
 }

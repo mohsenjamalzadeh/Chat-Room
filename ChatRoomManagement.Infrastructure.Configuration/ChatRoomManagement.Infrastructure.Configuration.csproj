@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ChatRoomManagement.Domain\ChatRoomManagement.Domain.csproj" />
+    <ProjectReference Include="..\ChatRoomManagement.Application.Contracts\ChatRoomManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\ChatRoomManagement.Application\ChatRoomManagement.Application.csproj" />
     <ProjectReference Include="..\ChatRoomManagement.Infrastructure.EfCore\ChatRoomManagement.Infrastructure.EfCore.csproj" />
   </ItemGroup>
 

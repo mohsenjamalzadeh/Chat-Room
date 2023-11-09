@@ -4,5 +4,6 @@ namespace ChatRoomManagement.Domain.UserAgg
 {
     public interface IUserRepository:IRepository<Guid,User>
     {
+        User GetByEmail(string email);
     }
 }

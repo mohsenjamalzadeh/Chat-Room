@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ChatRoomManagement.Application.Contracts\ChatRoomManagement.Application.Contracts.csproj" />
     <ProjectReference Include="..\ChatRoomManagement.Infrastructure.Configuration\ChatRoomManagement.Infrastructure.Configuration.csproj" />
   </ItemGroup>
 
