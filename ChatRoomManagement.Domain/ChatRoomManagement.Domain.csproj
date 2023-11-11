@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\01-framework\01-framework.csproj" />
+    <ProjectReference Include="..\ChatRoomManagement.Application.Contracts\ChatRoomManagement.Application.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
 using _01_framework.Application;
 using ChatRoomManagement.Infrastructure.Configuration;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using ServiceHost.Hubs;
 using WebApiTest;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddMvc();
 builder.Services.AddControllers();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddSignalR();
+
 ChatRoomManagementBootStrapper.Configure(builder.Services,connectionString);
 
 
@@ -45,5 +48,5 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 app.MapControllers();
-
+app.MapHub<ChatHub>("/chatHub");
 app.Run();

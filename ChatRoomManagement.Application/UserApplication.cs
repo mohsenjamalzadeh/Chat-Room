@@ -39,7 +39,12 @@ namespace ChatRoomManagement.Application
 			throw new NotImplementedException();
 		}
 
-		public bool SignIn(SignInViewModel signInViewModel)
+        public void LogOut()
+        {
+            _authHelper.Singout();
+        }
+
+        public bool SignIn(SignInViewModel signInViewModel)
 		{
 			if (signInViewModel.Email == null || signInViewModel.Password == null)
 				return false;

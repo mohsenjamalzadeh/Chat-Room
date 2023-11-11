@@ -31,5 +31,14 @@ namespace ServiceHost.Pages.Auth.Login
 
 			return Page();
 		}
+		
+
+		public IActionResult OnGetLogOut()
+		{
+			_userApplication.LogOut();
+			return RedirectToPage("/auth/login/Index");
+		}
+
+
 	}
 }

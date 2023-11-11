@@ -1,4 +1,5 @@
 ﻿using _01_framework.Domain;
+using ChatRoomManagement.Domain.GroupAgg;
 
 namespace ChatRoomManagement.Domain.UserAgg
 {
@@ -12,6 +13,9 @@ namespace ChatRoomManagement.Domain.UserAgg
         public string Password { get;private set; }
         public string Picture { get;private set; }
 
+
+        public List<Group> Groups { get;private set; }
+
         public User(string name, string email, string userName, string password, string picture)
         {
             Name = name;
@@ -21,6 +25,7 @@ namespace ChatRoomManagement.Domain.UserAgg
             Picture = picture;
             IsActive = false;
             IsOnline = true;
+            Groups=new List<Group>();
         }
 
         public void Edit(string name, string userName, string picture)

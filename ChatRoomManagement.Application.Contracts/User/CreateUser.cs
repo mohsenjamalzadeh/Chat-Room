@@ -35,6 +35,7 @@ namespace ChatRoomManagement.Application.Contracts.User
         OperationResult CreateAccount(CreateAccount command);
         OperationResult EditAccount(EditAccount command);
         bool SignIn(SignInViewModel signInViewModel);
+        void LogOut();
 
     }
 
